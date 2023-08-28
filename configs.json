@@ -5,12 +5,12 @@
     "local": "localhost:3332"
   },
   "supa_anon": {
-    "prod": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkeXZvbmRqbGd3cGNrcmVleG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyMTc2NjEsImV4cCI6MjAwODc5MzY2MX0.uZz9bu0y266DEay1Fz_e9L7jlGyESjcmR13HfF1zFvg",
+    "prod": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNjkzMTczNjAwLAogICJleHAiOiAxODUxMDI2NDAwCn0.ZVUuh4pgp08v5ZQxrC638tTV2pwNivu_Sr0oevejQ3Y",
     "development": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1Y3N5YnZuaGF2b2dkbXp3dGN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTQ1Mzk1MDYsImV4cCI6MTk3MDExNTUwNn0.HyuZmo_EjF5fgZQU3g37bdNardK1CLHgxXmYqtr59bo",
     "local": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
   },
   "supa_url": {
-    "prod": "https://sdyvondjlgwpckreexnd.supabase.co",
+    "prod": "http://49.12.203.138:54321",
     "development": "https://aucsybvnhavogdmzwtcw.supabase.co",
     "local": "http://localhost:54321"
   }
