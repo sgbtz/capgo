@@ -1,10 +1,11 @@
+GRANT ALL ON SCHEMA public TO public;
+
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
@@ -1040,6 +1041,7 @@ CREATE TABLE "public"."app_usage" (
     "mlu" bigint DEFAULT '0'::bigint NOT NULL,
     "storage" bigint DEFAULT '0'::bigint NOT NULL,
     "bandwidth" bigint DEFAULT '0'::bigint NOT NULL,
+    "mode" character varying
 );
 
 CREATE TABLE "public"."app_stats" (
@@ -1824,7 +1826,14 @@ CREATE POLICY "Disable for all" ON "public"."notifications" USING (false) WITH C
 
 CREATE POLICY "Disable for all" ON "public"."store_apps" USING (false) WITH CHECK (false);
 
-CREATE POLICY "Enable all for user based on user_id" ON "public"."apikeys" FOR SELECT TO "authenticated" USING ((("auth"."uid"() = "user_id") OR "public"."is_admin"("auth"."uid"()))) WITH CHECK ((("auth"."uid"() = "user_id") OR "public"."is_admin"("auth"."uid"())));
+CREATE POLICY "Enable all for user based on user_id" ON "public"."apikeys"
+    FOR SELECT
+    TO "authenticated"
+    USING (
+        ("auth"."uid"() = "user_id") OR
+        "public"."is_admin"("auth"."uid"())
+    );
+
 
 CREATE POLICY "Enable select for authenticated users only" ON "public"."plans" FOR SELECT TO "authenticated" USING (true);
 
@@ -2127,11 +2136,7 @@ GRANT ALL ON FUNCTION "public"."is_app_shared"("userid" "uuid", "appid" characte
 GRANT ALL ON FUNCTION "public"."is_app_shared"("userid" "uuid", "appid" character varying) TO "anon";
 GRANT ALL ON FUNCTION "public"."is_app_shared"("userid" "uuid", "appid" character varying) TO "authenticated";
 GRANT ALL ON FUNCTION "public"."is_app_shared"("userid" "uuid", "appid" character varying) TO "service_role";
-
-GRANT ALL ON FUNCTION "public"."is_canceled"("userid" "uuid") TO "postgres";
-GRANT ALL ON FUNCTION "public"."is_canceled"("userid" "uuid") TO "anon";
-GRANT ALL ON FUNCTION "public"."is_canceled"("userid" "uuid") TO "authenticated";
-GRANT ALL ON FUNCTION "public"."is_canceled"("userid" "uuid") TO "service_role";
+;
 
 GRANT ALL ON FUNCTION "public"."is_free_usage"("userid" "uuid") TO "postgres";
 GRANT ALL ON FUNCTION "public"."is_free_usage"("userid" "uuid") TO "anon";
