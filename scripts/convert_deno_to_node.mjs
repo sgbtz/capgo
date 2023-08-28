@@ -28,8 +28,8 @@ const baseNetlifyTests = `${baseNetlify}/${baseTests}`
 const baseNetlifyUtils = `${baseNetlify}/${baseUtils}`
 const baseNetlifyEdgeTests = `${baseNetlify}/${baseEdgeFunctions + baseTests}`
 const baseNetlifyEgdeUtils = `${baseNetlify}/${baseEdgeFunctions + baseUtils}`
-const allowed = ['bundle', 'channel_self', 'ok', 'stats', 'website_stats', 'channel', 'device', 'plans', 'updates', 'store_top']
-const background = ['web_stats', 'cron_good_plan', 'get_framework', 'get_top_apk', 'get_similar_app', 'get_store_info']
+const allowed = ['bundle', 'channel_self', 'ok', 'stats', 'website_stats', 'channel', 'device', 'plans', 'updates', 'store_top', 'web_stats', 'cron_good_plan', 'get_framework', 'get_top_apk', 'get_similar_app', 'get_store_info']
+const background = []
 const allowedUtil = ['utils', 'conversion', 'types', 'supabase', 'supabase.types', 'invalids_ip', 'plans', 'logsnag', 'crisp', 'plunk', 'notifications', 'stripe', 'r2', 'downloadUrl', 'gplay_categ']
 
 const supaTempl = {}
