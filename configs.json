@@ -10,7 +10,7 @@
     "local": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
   },
   "supa_url": {
-    "prod": "http://49.12.203.138:8000",
+    "prod": "https://supabase.elcomandero.es/",
     "development": "https://aucsybvnhavogdmzwtcw.supabase.co",
     "local": "http://localhost:54321"
   }
