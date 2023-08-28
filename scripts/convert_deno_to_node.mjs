@@ -30,7 +30,6 @@ const baseNetlifyEdgeTests = `${baseNetlify}/${baseEdgeFunctions + baseTests}`
 const baseNetlifyEgdeUtils = `${baseNetlify}/${baseEdgeFunctions + baseUtils}`
 const allowed = ['bundle', 'channel_self', 'ok', 'stats', 'website_stats', 'channel', 'device', 'plans', 'updates', 'store_top']
 const background = ['web_stats', 'cron_good_plan', 'get_framework', 'get_top_apk', 'get_similar_app', 'get_store_info']
-// const onlyNode = ['get_framework-background', 'get_top_apk-background', 'get_similar_app-background', 'get_store_info-background']
 const allowedUtil = ['utils', 'conversion', 'types', 'supabase', 'supabase.types', 'invalids_ip', 'plans', 'logsnag', 'crisp', 'plunk', 'notifications', 'stripe', 'r2', 'downloadUrl', 'gplay_categ']
 
 const supaTempl = {}
@@ -142,7 +141,7 @@ const filesBg = foldersBg.map(f => `${baseSupaFunctions}/${f}/index.ts`)
 
 // create list of netlify functions from files supabase/functions/folder/index.ts -> netlify/functions/folder.ts
 const netlifyFiles = files.map(f => f.replace(`${baseSupaFunctions}/`, `${baseNetlifyFunctions}/`).replace('/index.ts', '.ts'))
-const netlifyBgFiles = filesBg.map(f => f.replace(`${baseSupaFunctions}/`, `${baseNetlifyFunctions}/`).replace('/index.ts', '-background.ts'))
+const netlifyBgFiles = filesBg.map(f => f.replace(`${baseSupaFunctions}/`, `${baseNetlifyFunctions}/`).replace('/index.ts', '.ts'))
 // const onlyNodeNetlify = onlyNode.map(f => `${baseNetlifyFunctions}/${f}.ts`)
 const netlifyEdgeFiles = files.map(f => f.replace(`${baseSupaFunctions}/`, `${baseNetlifyEdgeFunctions}/`).replace('/index.ts', '.ts'))
 // create netlify/functions folder if not exists
