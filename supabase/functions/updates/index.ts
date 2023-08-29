@@ -300,7 +300,7 @@ async function main(url: URL, headers: BaseHeaders, method: string, body: AppInf
       version_build,
       updated_at: new Date().toISOString(),
     })
-    // console.log('updateOrCreateDevice done')
+    console.log('updateOrCreateDevice done')
     if (!planValid) {
       console.log(id, 'Cannot update, upgrade plan to continue to update', app_id)
       await sendStats('needPlanUpgrade', platform, device_id, app_id, version_build, versionId)
@@ -325,7 +325,7 @@ async function main(url: URL, headers: BaseHeaders, method: string, body: AppInf
         signedURL = res
     }
 
-    // console.log('signedURL', device_id, signedURL, version_name, version.name)
+    console.log('signedURL', device_id, signedURL, version_name, version.name)
     if (version_name === version.name) {
       console.log(id, 'No new version available', device_id, version_name, version.name)
       await sendStats('noNew', platform, device_id, app_id, version_build, versionId)

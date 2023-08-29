@@ -19,8 +19,6 @@ CREATE EXTENSION IF NOT EXISTS "pgsodium" WITH SCHEMA "pgsodium";
 
 ALTER SCHEMA "public" OWNER TO "postgres";
 
-CREATE SCHEMA "stripe";
-
 CREATE EXTENSION IF NOT EXISTS "http" WITH SCHEMA "extensions";
 
 CREATE EXTENSION IF NOT EXISTS "moddatetime" WITH SCHEMA "extensions";
